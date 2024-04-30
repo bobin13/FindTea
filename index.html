@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <h3>Find Your Tea!</h3>
-    </header>
 
-    <div>
-      <input
-        id="textFieldSearch"
-        type="text"
-        class="input"
-        value="london"
-        placeholder="Enter City..."
-      /><br />
-      <button id="btnSearch" class="btnSearch" value="Search!">Find</button>
-    </div>
-    <br />
-    <div><h5 id="loadingText">(Finding Tea..)</h5></div>
-    <div id="tableDiv">
-      <table id="listTable" class="content-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>City</th>
-            <th>Address</th>
-            <th>Rating</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <div id="searchPanel" class="search-panel">
+      <input type="text" id="searchBox" class="search-input" placeholder="Enter a City.."><br>
+      <input type="button" class="search-button" value="Search">
     </div>
 
-    <footer></footer>
-  </body>
-  <script type="text/javascript" src="js/script.js"></script>
+    <div class="quickSearch-panel">
+      <div class="quickSearch-item" v-for="store in stores">
+        {{store}}
+      </div>
+    </div>
+    <div class="list-panel">
+      <ul class="list">
+        <li class="list-item">
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+<script type="text/javascript" src="js/app.js"></script>
+
 </html>
